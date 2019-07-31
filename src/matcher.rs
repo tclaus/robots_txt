@@ -54,6 +54,7 @@ impl<'a> SimpleMatcher<'a> {
                     if UniCase::new(part) == UniCase::new(&rule.path) {
                         return rule.allow;
                     }
+
                 }
                 true
             }
