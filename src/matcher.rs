@@ -50,8 +50,8 @@ impl<'a> SimpleMatcher<'a> {
                     if rule.path.len() > path.len() {
                         continue;
                     }
-                    let part: &str = &path[..rule.path.len()];
-                    if UniCase::new(part) == UniCase::new(&rule.path) {
+                    let normalized : &str = &rule.path;
+                    if path.starts_with(normalized) {
                         return rule.allow;
                     }
 
